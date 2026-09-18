@@ -198,3 +198,12 @@ print(memory.load_memory_variables({"prompt": "그 사람이 좋아하는 색이
 LangChain 1.x 이후 공식적으로 권장되는 대화 상태 관리 방식은 위 메모리 클래스들이 아니라
 LangGraph의 `checkpointer`(예: `InMemorySaver`)를 이용해 그래프 실행 상태 자체를 영속화하는
 방식입니다. 새 프로젝트를 시작한다면 이 방식을 우선 검토하는 것이 좋습니다.
+
+## 참고 개발문서 링크
+
+- [LangChain 메모리 마이그레이션 가이드](https://python.langchain.com/docs/versions/migrating_memory/) — 레거시 `memory` 모듈에서 LangGraph 방식으로 옮기는 공식 가이드
+- [LangGraph Persistence (checkpointer) 개념 문서](https://langchain-ai.github.io/langgraph/concepts/persistence/) — `InMemorySaver` 등 체크포인터 기반 상태 영속화 설명
+- [langchain-classic PyPI 페이지](https://pypi.org/project/langchain-classic/) — 레거시 메모리 클래스가 이동한 패키지
+- [langchain-anthropic API 레퍼런스](https://python.langchain.com/api_reference/anthropic/chat_models/langchain_anthropic.chat_models.ChatAnthropic.html) — `ChatAnthropic` 클래스 상세 문서
+- [Anthropic Claude API 공식 문서](https://docs.anthropic.com/) — 모델 목록, 토큰/가격 정책 등
+- [langchain-community `NetworkxEntityGraph`](https://python.langchain.com/api_reference/community/graphs/langchain_community.graphs.networkx_graph.NetworkxEntityGraph.html) — `ConversationKGMemory`가 내부적으로 사용하는 그래프 구현
